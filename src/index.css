@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-earth: #3d405b;
+  --color-sage: #81b29a;
+  --color-warm-bg: #f4f1de;
+  --color-terracotta: #e07a5f;
+  --color-sand: #f2cc8f;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-bg text-gray-800 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-earth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-earth text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-earth border border-earth px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-all duration-200;
+  }
+  
+  .btn-emerald {
+    @apply bg-sage text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-warm {
+    @apply bg-terracotta text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all duration-200 shadow-sm;
+  }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full hover:bg-gray-300;
+}
